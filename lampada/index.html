@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header id="cabecalho">
+            <h1>VANILLA JS</h1>
+        </header>
+        <main>
+            <div id="conteudo">
+                <img id="img" src="./img/desligada.jpg" alt="Imagem" title="Lampada" onmouseleave="saiu()" onmouseenter="ascender()" ondblclick="quebrar()">
+            </div>
+            <div id="botoes">
+                <button id="turnOnOff" class="botao" type="button" value="" onclick="ligarDesligar()" >Ligar</button>
+            </div>
+        </main>
+        <footer id="rodape">
+            <p>
+                &copy;PedroCardoso <br>
+                <a href="">Facebook</a> - <a href="">Instagram</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

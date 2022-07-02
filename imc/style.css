@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    max-width: 1900px;
+    min-width: 300px;
+}
+main{
+    box-shadow: 2px 2px 4px gray;
+    width: 30%;
+    height: 400px;
+    margin: 35px auto;
+    border-radius: 15px;
+    background-color: rgb(239, 196, 55);
+    padding-bottom: 15px;
+}
+#titulo{
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px 0px 0px;
+    
+}
+#bar{
+    border: 2px solid black;
+}
+#conteudo{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#button{
+    background-color: black;
+    color: rgb(239, 196, 55);
+    padding: 7px;
+    width: 95%;
+    border: 0;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+#button:hover{
+    background-color: rgb(38, 37, 37);
+}
+.column-3 { 
+       /*nome  */
+    width: 25%;    
+}
+.column-9 {    
+    /* imput */
+    width: 75%;    
+}
+.label {
+    padding-top: 7px;
+    font-weight: bold
+}
+.column {
+    float: left;
+    height: 41px;
+}
+.input input {
+    width: 90%;
+    height: 35px;    
+    background-color: white;
+    border: 0 none;
+    border-radius: 3px;
+    padding: 10px;
+    outline: 0;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Joan', serif;
+    font-size: 17px;
+}
+#resultado{
+    background-color: black;
+    color: rgb(239, 196, 55);
+    width: 77%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin: auto;
+    padding: 40px 10px;
+    text-align: center;
+    font-family: 'Joan', serif;
+    font-weight: normal;
+}

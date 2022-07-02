@@ -1,0 +1,105 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.linha{
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+#on{
+    cursor: pointer;
+    background-color: aqua;
+    border-radius: 50px;
+    border: 2px solid aqua;
+    color: white;
+    padding: 5px;
+}
+#on:hover{
+    background-color: rgb(5, 211, 211);
+    border: 2px solid rgb(5, 211, 211);
+}
+.button{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 4px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px gray;
+    outline: 1px solid #9e9595;
+}
+.button:hover{
+    background-color: rgb(43, 43, 43);
+}
+.amarelo{
+    cursor: pointer;
+    background-color: yellow;
+    border: 1px solid yellow;
+    border-radius: 1000px;
+    margin: 5px;
+    height: 10px;
+    width: 50px;
+    padding: 3px 5px 14px 5px;
+}
+.blue{
+    margin-top: 4px;
+    cursor: pointer;
+    width: 40px;
+    height: 80px;
+    font-size: 25px;
+    color: white;
+    background-color: aqua;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px gray;
+}
+#blue:hover{
+    background-color: rgb(5, 211, 211);
+    border: 1px solid rgb(5, 211, 211);
+}
+.ultima{
+    margin-top: -37px;
+    margin-left: -40px;
+}
+main#container{
+    box-shadow: 2px 2px 3px black;
+    width: 25%;
+    margin: 20px auto;
+    border-radius: 15px;
+    background-color: #606060;
+    padding: 10px;
+}
+div#resultado{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    background-color: rgb(127, 198, 127);
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid #606060;
+    outline: 2px solid black;
+}
+div#resultado input{
+    width: 50px;
+    background-color: rgb(127, 198, 127);
+    border: 2px solid red;
+    text-align: end;
+}
+div#conteudo ul#operacoes{
+    display: flex;
+    width: 80%;
+    margin: 10px auto;
+
+}
+div#conteudo ul#operadores{
+    width: 80%;
+    margin: auto;
+    display: block;
+}

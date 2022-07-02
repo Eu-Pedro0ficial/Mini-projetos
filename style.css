@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #dddddd;
+}
+/* ------------------------------------------------------------------------------------------- */
+/* Cabecalho */
+header#cabecalho{
+    display: flex;
+    align-items: center;
+}
+header#cabecalho #logo{
+    margin: 50px 0px 0px 100px;
+}
+header#cabecalho nav, ul{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    margin-top: -55px;
+    right: 20px;
+    justify-content: flex-end;
+}
+header#cabecalho nav ul li{
+    list-style: none;
+}
+header#cabecalho nav ul li a{
+    text-decoration: none;
+    margin: 25px;
+    padding: 10px;
+    color: black;
+    box-shadow: 2px 2px 3px #606060;
+    background-color: white;
+}
+header#cabecalho nav ul li a:hover{
+    color: #606060;
+}
+/* ------------------------------------------------------------------------------------------- */
+/* conteudo */
+main{
+    display: flex;
+    width: 65%;
+    margin: 20px auto;
+}
+main section#conteudo{
+    width: 70%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 1px 5px #606060;
+    text-align: center;
+}
+main section#conteudo h2{
+    border-bottom: 1px solid black;
+}
+main section#conteudo p{
+    margin-top: 30px;
+}
+main aside#barra-lateral{
+    margin: 0px 0px 0px 100px;
+    width: 20%;
+    height: 200px;
+    box-shadow: 0px 1px 5px black;
+    background-color: white;
+}
+main aside#barra-lateral h2{
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+main aside#barra-lateral ul{
+    position: relative;
+    text-align: center;
+    margin: 0px 0px 0px 20px;
+    display: block;
+    clear: both;
+}
+main aside#barra-lateral ul li{
+    list-style: none;
+    margin-bottom: 5px;
+    white-space: 100%;
+}
+main aside#barra-lateral ul li a{
+    text-decoration: none;
+    color: black;
+}
+main aside#barra-lateral ul li a:hover{
+    color: #606060;
+}
+/* ------------------------------------------------------------------------------------------- */
+/* Rodape */
+
+footer#rodape p{
+    text-align: center;
+    margin-top: 100px;
+}
+footer#rodape p a{
+    text-decoration: none;
+    color: #606060;
+}

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header#cabecalho{
+    text-align: center;
+    margin: 40px;
+    font-size: 25px;
+}
+div#conteudo{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+div#conteudo #img{
+    cursor: pointer;
+}
+div#botoes{
+    display: flex;
+    justify-content: center;
+}
+div#botoes .botao{
+    background-color: rgb(255, 45, 45);
+    padding: 7px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 1px solid #b3b2b2;
+    box-shadow: 1px 1px 6px #dddddd;
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+div#botoes .botao:hover{
+    background-color: red;
+}
+footer#rodape{
+    margin: 20px;
+}
+footer#rodape p{
+    text-align: center;
+}
+footer#rodape p a{
+    text-decoration: none;
+    color: #606060;
+}
