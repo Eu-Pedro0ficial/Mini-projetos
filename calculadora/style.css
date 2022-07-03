@@ -9,7 +9,7 @@
     justify-content: center;
     margin: 2px;
 }
-#on{
+#limpar{
     cursor: pointer;
     background-color: aqua;
     border-radius: 50px;
@@ -17,7 +17,7 @@
     color: white;
     padding: 5px;
 }
-#on:hover{
+#limpar:hover{
     background-color: rgb(5, 211, 211);
     border: 2px solid rgb(5, 211, 211);
 }

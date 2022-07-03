@@ -9,50 +9,45 @@
 </head>
 <body>
     <main id="container">
-        <div id="resultado">
-            <input disabled type="number" name="res" id="valor1">
-        </div>
+        <div id="resultado"></div>
         <div id="conteudo">
             <div class="linha">
-                <button id="on">ON/CE</button>
+                <button id="limpar">CE</button>
                 <button class="amarelo">MRC</button>
                 <button class="amarelo">M-</button>
                 <button class="amarelo">.M+</button>
             </div>
-            <div id="itens">
-                <div class="linha">
-                    <button class="button">OFF</button>
-                    <button class="button">Raiz</button>
-                    <button id="porcentagem" class="button">%</button>
-                    <button id="divisao" class="button">/</button>
-                </div>
-                <div class="linha">
-                    <button id="7" class="button">7</button>
-                    <button id="8" class="button">8</button>
-                    <button id="9" class="button">9</button>
-                    <button id="multiplicacao" class="button">*</button>
-                </div>
-                <div class="linha">
-                    <button id="4" class="button">4</button>
-                    <button id="5" class="button">5</button>
-                    <button id="6" class="button">6</button>
-                    <button id="diferenca" class="button">-</button>
-                </div>
-                <div class="linha">
-                    <button id="1" class="button">1</button>
-                    <button id="2" class="button">2</button>
-                    <button id="3" class="button">3</button>
-                    <button id="soma" class="blue">+</button>
-                </div>
-                <div class="linha ultima">
-                    <button id="0" class="button">0</button>
-                    <button id="." class="button">.</button>
-                    <button id="igual" class="button">=</button>
-                </div>
+            <div class="linha">
+                <button id="backspace" class="button">&laquo;</button>
+                <button class="button" id="operatorRaiz">Raiz</button>
+                <button id="operadorPorcentagem" class="button">%</button>
+                <button id="operadorDivisao" class="button">/</button>
+            </div>
+            <div class="linha">
+                <button id="tecla7" class="button">7</button>
+                <button id="tecla8" class="button">8</button>
+                <button id="tecla9" class="button">9</button>
+                <button id="operadorMultiplicacao" class="button">*</button>
+            </div>
+            <div class="linha">
+                <button id="tecla4" class="button">4</button>
+                <button id="tecla5" class="button">5</button>
+                <button id="tecla6" class="button">6</button>
+                <button id="operadorDiferenca" class="button">-</button>
+            </div>
+            <div class="linha">
+                <button id="tecla1" class="button">1</button>
+                <button id="tecla2" class="button">2</button>
+                <button id="tecla3" class="button">3</button>
+                <button id="operadorSoma" class="blue">+</button>
+            </div>
+            <div class="linha ultima">
+                <button id="tecla0" class="button">0</button>
+                <button id="decimal" class="button">.</button>
+                <button id="igual" class="button">=</button>
             </div>
         </div>
     </main>
     <script src="./script.js"></script>
-    <script type="module" src="./funcoes.js"></script>
 </body>
 </html>
