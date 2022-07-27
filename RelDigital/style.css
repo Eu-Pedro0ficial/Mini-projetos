@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border: 3px solid black;
+    outline: 5px solid #606060;
+    background-color: rgb(34, 31, 31);
+    border-radius: 100px;
+    width: 7vw;
+    height: 25vh;
+    margin: 200px auto;
+    color: white;
+}
+.time{
+    margin-top: 30px;
+    text-align: center;
+}
+.data{
+    text-align: center;
+}
+#dayTime{
+    color: lightblue;
+}
