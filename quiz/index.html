@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Quiz">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./window.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <header class="cabecalho">
+            <h1>
+                Quiz
+            </h1>
+        </header>
+        <main class="conteudo">
+            <div class="bloco">
+                <p>Iniciar</p>
+            </div>
+        </main>
+        <footer class="rodape">
+            <p>
+                <a href="http://facebook.com.br" target="_blank" rel="noopener noreferrer">Facebook</a>
+                |
+                <a href="http://instagram.com.br" target="_blank" rel="noopener noreferrer">Instagram</a> <br>
+                <span>&copy;PedroCardoso</span>
+            </p>
+        </footer>
+    </div>
+
+<!-- ===================================================================================== -->
+    <!-- Parte de interacao do quiz -->
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="tittle">Pergunta:</h2>
+                <span class="modal-close" id="modalClose">&#10006;</span>
+            </header>
+            <div class="window">
+                <div class="question">
+                  <p id="pergunta">
+                    LaMelo ball joga em qual time ?
+                  </p>
+                </div>
+                <div class="response">
+                  <ol>
+                    <li id="quest" class="a">Hornets</li>
+                    <li id="quest" class="b">Lakers</li>
+                    <li id="quest" class="c">Bulls</li>
+                    <li id="quest" class="d">Chicago</li>
+                  </ol>
+                </div>
+            </div>
+            <div class="botao">
+                <button id="button">&raquo;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

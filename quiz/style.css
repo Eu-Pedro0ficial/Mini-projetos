@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: wheat;
+}
+header.cabecalho h1{
+    text-align: center;
+    margin: 80px 0px 50px 0px;
+
+    font-size: 70pt;
+    font-family: 'Dancing Script', cursive;
+}
+main.conteudo{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    width: 40%;
+    margin: auto;
+}
+main.conteudo div.bloco{
+    border: 1px solid rgb(173, 114, 4);
+    background-color: rgb(252, 252, 252);
+    border-radius: 100px;
+
+    width: 150px;
+    height: 150px;
+
+    padding: 20px;
+    margin: 30px;
+    cursor: pointer;
+
+    transition: all 1s;
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+}
+main.conteudo div.bloco:hover{
+    background-color: rgb(246, 209, 141);
+    box-shadow: 1px 1px 2px black;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    transform: scale(1.2, 1.2);
+    font-size: 30pt;
+}
+main.conteudo div.bloco p{
+    font-size: 25pt;
+    font-family: 'Cormorant SC', serif;
+}
+footer.rodape{
+    margin-top: 20px;
+}
+footer.rodape p{
+    text-align: center;
+    color: #606060;
+}
+footer.rodape p span{
+    color: black;
+}
+footer.rodape a{
+    text-decoration: none;
+    color: #606060;
+}

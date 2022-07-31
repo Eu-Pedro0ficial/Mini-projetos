@@ -1,0 +1,132 @@
+.modal{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #00000090;
+    opacity: 0;
+    z-index: -1;
+}
+
+.modal.active{
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 80vw;
+    margin: 30vh auto;
+    padding-bottom: 30px;
+    background-color: wheat;
+    box-shadow: 1px 1px 10px black;
+}
+
+.modal-header{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20pt;
+    font-family: 'Dancing Script', cursive;
+}
+.modal-close{
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.modal-close:hover{
+    background-color: #FF4949;
+    color: white;
+}
+div.question{
+    background-color: white;
+    border: 1px solid rgb(173, 114, 4);
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+div.question p{
+    text-align: center;
+}
+div.response ol{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 20px auto;
+}
+div.response ol li{
+    border: 1px solid rgb(173, 114, 4);
+    background-color: rgb(252, 252, 252);
+
+    list-style: none;
+    cursor: pointer;
+    padding: 5px;
+
+    font-size: 15pt;
+    font-family: 'Cormorant SC', serif;
+}
+.sumiu{
+    opacity: 0;
+    z-index: -1;
+}
+div.response ol li:hover{
+    background-color: rgb(246, 209, 141);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    /* Fazer quando clicar, sensaçao se pressionamento! */
+}
+div.response ol li.acertou{
+    background: rgb(206, 248, 206);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+div.response ol li.errou{
+    background: rgb(242, 121, 121);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.botao{
+    display: flex;
+    justify-content: flex-end;
+}
+#button{
+    width: 80px;
+    height: 30px;
+
+    border-radius: 10px;
+    border: 1px solid rgb(173, 114, 4);
+
+    cursor: pointer;
+    margin: 0px 10px 0px 0px;
+
+    transition: all 0s linear;
+}
+#button:hover{
+    transform: scale(0.980, 0.980);
+}
+@media (max-width:480px){
+    .modal{
+        top:100%;
+        transition: all 1s ease;
+    }
+    .modal.active{
+        top:0;
+    }
+    .modal-content{
+        margin:0;
+        width:100%;
+        position:fixed;
+    }
+}
