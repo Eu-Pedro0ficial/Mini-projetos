@@ -1,30 +1,23 @@
-'use strict'
-const pergunta = document.querySelector('#pergunta')
-const quest = document.querySelectorAll('#quest');
-const a = document.querySelector('.a')
-const b = document.querySelector('.b')
-const c = document.querySelector('.c')
-const d = document.querySelector('.d')
-// =====================================================================================
-// Problemas:
-
-    /*
-        Ele ta somando pontos toda vez que voce clica na resposta certa
-        Se voce clicar na resposta errada ele nao faz nada
-    */
-
+let numQuestao;
+let numero = 0;
+let pontuacao = 0;
+let initialSeason = false;
+let passed = false;
+let a = document.getElementById("a")
+let b = document.getElementById("b")
+let c = document.getElementById("c")
+let d = document.getElementById("d")
+let pergunta = document.getElementById("pergunta")
 // =====================================================================================
 // Interaçao com o layout
-let iniciou;
 const openModal = () => {
     document.getElementById('modal')
     .classList.add('active')
 
-    n = 0
+    initialSeason = true;
+    numero = 0
     iniciou = true
-    initialSeason()
-    NextQuest()
-
+    nextQuestion(numero)
 }
 
 const closeModal = () => {
@@ -33,267 +26,165 @@ const closeModal = () => {
     
     n = 0
     pontuacao = 0
-    removeValidation()
+
+    removeStyleValidation()
 }
-
 // =====================================================================================
-// Banco de perguntas
-
-const object = [
-        {
-            pergunta: "Qual é a representação química do dióxido de carbono?",
-            responseA: "O2",
-            responseB: "DO2",
-            responseC: "CO2",
-            responseD: "DCO2"
-        },
-        {
-            pergunta: "Qual dos alimentos a seguir não possui carboidratos ?",
-            responseA: "Soja",
-            responseB: "Carne",
-            responseC: "Trigo",
-            responseD: "Milho"
-        },
-        {
-            pergunta: "No ano de ---- foi decretada a abolição da escravatura no Brasil.",
-            responseA: "1890",
-            responseB: "1891",
-            responseC: "1888",
-            responseD: "1889"
-        },
-        {
-            pergunta: "O politeísmo é",
-            responseA: "O ato de não crer em nada",
-            responseB: "nenhuma das alternativas",
-            responseC: "A crença em várias divindades",
-            responseD: "A crença em um único Deus"
-        },
-        {
-            pergunta: "Todo número elevado a expoente zero é igual à:",
-            responseA: "Dois",
-            responseB: "Nenhuma das alternativas",
-            responseC: "Zero",
-            responseD: "Um"
-        },
-        {
-            pergunta: "Qual é o menor país do mundo?",
-            responseA: "Maldivas",
-            responseB: "Singapura",
-            responseC: "Vaticano",
-            responseD: "Mônaco"
-        },
-        {
-            pergunta: "Em que ano começou a Segunda Guerra Mundial?",
-            responseA: "1945",
-            responseB: "1939",
-            responseC: "1940",
-            responseD: "1941"
-        },
-        {
-            pergunta: "'Penso, logo existo' foi uma frase dita por qual filósofo?",
-            responseA: "Aristóteles",
-            responseB: "Rene Descartes",
-            responseC: "Sócrates",
-            responseD: "Platão"
-        },
-        {
-            pergunta: "Quantos centímetros tem um quilômetro?",
-            responseA: "100.000",
-            responseB: "1.000",
-            responseC: "100",
-            responseD: "10.000"
-        },
-        {
-            pergunta: "Qual é a capital dos Estados Unidos?",
-            responseA: "Washington, DC.",
-            responseB: "Los Angeles",
-            responseC: "Chicago",
-            responseD: "New York"
-        }
-]
+// Banco de questões:
+const q0 = {
+    numQuestao: 10,
+    pergunta: "O que a palavra legend significa em português?",
+    alternativaA: "Legenda",
+    alternativaB: "Lenda",
+    alternativaC: "História",
+    alternativaD: "Legendário",
+    correta: "Lenda"
+}
+const q1 = {
+    numQuestao: 1,
+    pergunta: "De quem é a famosa frase “Penso, logo existo”?",
+    alternativaA: "Platão",
+    alternativaB: "Galileu Galilei",
+    alternativaC: "Descartes",
+    alternativaD: "Sócrates",
+    correta: "Descartes"
+}
+const q2 = {
+    numQuestao: 2,
+    pergunta: "De onde é a invenção do chuveiro elétrico?",
+    alternativaA: "França",
+    alternativaB: "inglaterra",
+    alternativaC: "Brasil",
+    alternativaD: "itália",
+    correta: "Brasil"
+}
+const q3 = {
+    numQuestao: 3,
+    pergunta: "Quais o menor e o maior país do mundo?",
+    alternativaA: "Vaticano e Rússia",
+    alternativaB: "Nauru e China",
+    alternativaC: "Mônaco e canadá",
+    alternativaD: "Malta e Estados Unidos",
+    correta: "Vaticano e Rússia"
+}
+const q4 = {
+    numQuestao: 4,
+    pergunta: "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
+    alternativaA: "Jânio Quadros",
+    alternativaB: "Jacinto Anjos",
+    alternativaC: "Getúlio Vargas",
+    alternativaD: "João Goulart",
+    correta: "João Goulart"
+}
+const q5 = {
+    numQuestao: 5,
+    pergunta: "Qual o livro mais vendido no mundo a seguir à Bíblia?",
+    alternativaA: "O Senhor dos Anéis",
+    alternativaB: "Dom Quixote",
+    alternativaC: "O Pequeno Príncipe",
+    alternativaD: "Ela, a Feiticeira",
+    correta: "Dom Quixote"
+}
+const q6 = {
+    numQuestao: 6,
+    pergunta: "Quantas casas decimais tem o número pi?",
+    alternativaA: "Duas",
+    alternativaB: "Centenas",
+    alternativaC: "Infinitas",
+    alternativaD: "Milhares",
+    correta: "Infinitas"
+}
+const q7 = {
+    numQuestao: 7,
+    pergunta: "Qual o grupo em que todas as palavras foram escritas corretamente?",
+    alternativaA: "Asterístico, beneficiente, meteorologia, entertido",
+    alternativaB: "Asterisco, beneficente, meteorologia, entretido",
+    alternativaC: "Asterístico, beneficiente, metereologia, entretido",
+    alternativaD: "Asterisco, beneficiente, metereologia, entretido",
+    correta: "Asterisco, beneficente, meteorologia, entretido"
+}
+const q8 = {
+    numQuestao: 8,
+    pergunta: "Atualmente, quantos elementos químicos a tabela periódica possui?",
+    alternativaA: "113",
+    alternativaB: "109",
+    alternativaC: "118",
+    alternativaD: "92",
+    correta: "118"
+}
+const q9 = {
+    numQuestao: 9,
+    pergunta: "Quais os países que têm a maior e a menor expectativa de vida do mundo?",
+    alternativaA: "Japão e Serra Leoa",
+    alternativaB: "Estados Unidos e Angola",
+    alternativaC: "Itália e Chade",
+    alternativaD: "Brasil e Congo",
+    correta: "Japão e Serra Leoa"
+}
 // =====================================================================================
+// Funções:
+const questoes = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9]
 
-// apresentar as perguntas e respostas no quiz de forma inteligente
-let n = 1
-let out = false
-const validationQuest = () => {
-    for(let fix = 1; fix < 4; fix++){
-        quest.forEach(resposta => {
-            if(resposta.classList.value.indexOf("acertou") > 0){
-                out = true
+const nextQuestion = (event) => {
+    removeStyleValidation() 
+    if(initialSeason == true || passed == true){
+        initialSeason = false;
+        passed = false;
+
+        if( numero >= 10){
+            finalpage()
+            console.log("Fim!")
+        }else{
+            pergunta.textContent = questoes[numero].pergunta
+            a.textContent = questoes[numero].alternativaA
+            b.textContent = questoes[numero].alternativaB
+            c.textContent = questoes[numero].alternativaC
+            d.textContent = questoes[numero].alternativaD
+            a.setAttribute('value', numero+'A')
+            b.setAttribute('value', numero+'B')
+            c.setAttribute('value', numero+'C')
+            d.setAttribute('value', numero+'D')
+
+            numero++
+        }       
+    }else{
+        alert("Responda á pergunta!")   }
+    
+}
+const  validation = (conteudo) => {
+    if(conteudo == questoes[numero - 1].correta && passed == false){
+        pontuacao++
+        passed = true;
+
+    }else{
+        passed = true;
+
+    }
+}
+const validationQuest = (event) => {
+    let conteudo = event.target.textContent
+    validation(conteudo)
+    addStyleValidation(event)
+}
+const addStyleValidation = () => {
+    document.querySelectorAll(".quest")
+        .forEach(resposta => {
+            if(resposta.textContent == questoes[numero - 1].correta){
+                resposta.classList.add("acertou")
+            }else{
+                resposta.classList.add("errou")
             }
         })
-    }
 }
-const NextQuest = () => {
-    // Alterar o local das respostas certas!
-    if(n < object.length){
-        if(out == true || iniciou == true){
-            out = false
-            iniciou = false
-            removeValidation()
-    
-            pergunta.textContent = object[n].pergunta
-
-                a.textContent = object[n].responseA
-                b.textContent = object[n].responseB
-                c.textContent = object[n].responseC
-                d.textContent = object[n].responseD
-            
-
-            n++
-            console.log(`Localizador ${n}`)
-            validationQuest()
-
-        }else{
-            alert("Por favor, responda a pergunta!")
-        }
-    }else{
-        final()
-    }
+const removeStyleValidation = () => {
+    document.querySelectorAll(".quest")
+        .forEach(resposta => {
+            resposta.classList.remove("errou");
+            resposta.classList.remove("acertou");
+            resposta.classList.remove("sumiu");
+        })
 }
-// validar o acerto e o erro
-let pontuacao = 0
-
-const addValidation = (event) => {
-    const target = event.target;
-    
-    if(target.classList.value.indexOf("acertou") < 0){
-    if(target.textContent.toUpperCase() == "CO2" || target.textContent.toUpperCase() == "CARNE" || target.textContent.toUpperCase() == "1888" || target.textContent.indexOf("divindades") > 0 || target.textContent.toUpperCase() == "UM" || target.textContent.toUpperCase() == "VATICANO" || target.textContent.toUpperCase() == "1939" || target.textContent.indexOf("Rene") >= 0 || target.textContent.toUpperCase() == "10.000" || target.textContent.toUpperCase() == "WASHINGTON, DC."){
-
-        pontuacao++
-        target.classList.add("acertou")
-        for(let fix = 1; fix < 4; fix++){
-            quest.forEach(resposta => {
-                if(resposta.classList.value.indexOf("acertou") < 0){
-                    resposta.classList.add("errou")
-                }
-            })
-        }
-        validationQuest()
-        console.log(`Pontuacao ${pontuacao}`)
-    }else{
-        if(pergunta.textContent.indexOf("química")){
-            out = true
-            c.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("carboidratos")){
-            out = true
-            b.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("Brasil")){
-            out = true
-            c.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("politeísmo")){
-            out = true
-            c.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("expoente")){
-            out = true
-            d.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("mundo")){
-            out = true
-            c.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("Guerra")){
-            out = true
-            b.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("filósofo")){
-            out = true
-            b.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("centímetro")){
-            out = true
-            d.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else if(pergunta.textContent.indexOf("capital")){
-            out = true
-            a.classList.add("acertou")
-            for(let fix = 1; fix < 4; fix++){
-                quest.forEach(resposta => {
-                    if(resposta.classList.value.indexOf("acertou") < 0){
-                        resposta.classList.add("errou")
-                    }
-                })
-            }
-        }else{
-            console.log("erro!")
-        }
-    }
-    }else{
-        alert("Por favor, passe para a proxima pergunta!")
-    }
-}
-const removeValidation = () => {
-    quest.forEach(resposta => {
-        if(resposta.classList.value.indexOf("acertou") > 0){
-            resposta.classList.remove("acertou")
-            console.log("removido")
-        }else{
-            resposta.classList.remove("errou")
-        }
-    })
-
-}
-// contabilizar os acertos e erros do usuario ao final do quiz
-const final = () => {
+const finalpage = () => {
     document.querySelector('#tittle').innerHTML = `Pontuação:`
     document.querySelector('#pergunta').innerHTML = `Sua pontuação foi: ${pontuacao}`
     
@@ -303,24 +194,23 @@ const final = () => {
     c.textContent = ""
     d.textContent = ""
 
-    quest.forEach(resposta => {
-        resposta.classList.add("sumiu")
+    document.querySelectorAll(".quest")
+    .forEach(resposta => {
+        resposta.classList.add("sumiu");
     })
-}
-const initialSeason = () => {
-    quest.forEach(resposta => {
-        resposta.classList.remove("sumiu")
-    })
+
+    passed = true;
 }
 // =====================================================================================
 // Adicionando eventos
 document.querySelector('.bloco')
-    .addEventListener('click', openModal)
+    .addEventListener('click', openModal);
 
 document.getElementById('modalClose')
-    .addEventListener('click', closeModal)
+    .addEventListener('click', closeModal);
 
-quest.forEach(item => item.addEventListener('click', addValidation))
+document.getElementById("button")
+    .addEventListener('click', nextQuestion);
 
-document.querySelector('#button')
-    .addEventListener('click', NextQuest)
+document.querySelectorAll(".quest")
+    .forEach(element => element.addEventListener('click', validationQuest));
