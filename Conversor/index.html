@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https: //fonts.googleapis.com/css2? family= Cinzel:wght@700 & display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Conversor de moeda</title>
+</head>
+<body>
+    <header class="cabeçalho">
+        <h1 class="titulo">Conversor de Moedas.</h1>
+    </header>
+    <main class="principal">
+        <div class="conteudo">
+            <div class="primeiro">
+                <label id="value" for="value">Valor</label>
+                <input class="valor" type="number" name="value" id="valorNum">
+
+                <label id="res" for="resultado">Resultado</label>
+                <input class="valor" type="number" name="resultado" id="result">
+            </div>
+            <div>
+                <label for="listE">Converter de</label>
+                <select name="valoresA" class="valor" id="listUm">
+                    <option value="BRA">BRA</option>
+                </select>
+                <label for="listS">Para</label>
+                <select name="valoresB" class="valor" id="listDois">
+                    <option value=""></option>
+                    <option value="EUA">EUA</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GPB">GPB</option>
+                    <option value="CAD">CAD</option>
+                </select>
+                <input id="atualizar" class="botao" type="button" value="Atualizar">
+            </div>
+        </div>
+    </main>
+    <footer class="rodape">
+        <p>
+            &copy;Pedro Cardoso <br>
+            <a href="http://" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+            <a href="http://" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>
