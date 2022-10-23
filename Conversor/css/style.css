@@ -24,7 +24,7 @@ main.principal div.conteudo{
 main.principal div.conteudo div{
     margin: 20px;
 }
-main.principal div.conteudo div select.valor, input.valor{
+main.principal div.conteudo div select.valor{
     width: 120px;
     height: 50px;
     padding: 10px;
@@ -32,26 +32,19 @@ main.principal div.conteudo div select.valor, input.valor{
     border: 1px solid gray;
     outline: 0;
     border-radius: 5px;
+    margin-right: 30px;
 }
-main.principal div.conteudo input.botao{
-    width: 70px;
+main.principal div.conteudo div input.outroValor{
+    width: 120px;
     height: 50px;
-    font-weight: bold;
-    margin-top: 15px;
-    border-radius: 10px;
-    border: 0;
+    padding: 10px;
+    font-size: 15pt;
+    border: 1px solid gray;
     outline: 0;
-    background-color: rgb(255, 115, 0);
-    color: white;
-    text-shadow: 1px 1px 1px;
+    border-radius: 5px;
+    margin-right: 75px;
 }
-main.principal div.resultado{
-    box-shadow: 1px 2px 5px black;
-    width: 50vw;
-    height: 20vh;
-    margin: auto;
-    padding: 20px;
-}
+
 footer.rodape{
     text-align: center;
     margin: 20px;

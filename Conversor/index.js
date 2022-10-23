@@ -1,7 +1,13 @@
-const valor = document.querySelector("#valorNum")
+// Dados de entrada:
+const campoUm = document.querySelector("#campoUm");
+const campoDois = document.querySelector('#campoDois');
+
+const textUm = document.querySelector('#textUm')
+const textDois = document.querySelector('#textDois')
+
+
 const selectUm = document.querySelector("#listUm").value;
 const selectDois = document.querySelector("#listDois");
-const res = document.querySelector('#result');
 
 let cotacao = 0;
 let resultadoFinal;
@@ -11,7 +17,32 @@ let resultadoFinal;
 // 1 real -- 0.17 GPB
 // 1 real -- 0.26 CAD
 
-selectDois.addEventListener('change', ()=>{
+// Processamento:
+const interacao = () => {
+    textUm.textContent = selectUm;
+    textDois.textContent = selectDois.value;
+}
+const calcularParaPrimeiroCampo = (campo, resultado) => {
+    console.log(cotacao);
+    resultadoFinal = campo.value * cotacao;
+    resultado.value = resultadoFinal.toFixed(2);
+}
+const calcularParaSegundoCampo = (campo, resultado) => {
+    console.log(cotacao);
+    resultadoFinal = campo.value/cotacao;
+    resultado.value = resultadoFinal.toFixed(2);
+}
+
+campoUm.addEventListener('change', () => {
+    console.log(campoUm.value)
+    calcularParaPrimeiroCampo(campoUm, campoDois)
+})
+campoDois.addEventListener('change', () => {
+    console.log(campoDois.value)
+    calcularParaSegundoCampo(campoDois, campoUm)
+})
+
+selectDois.addEventListener('change',()=>{
 
     select = selectDois.value
     switch(select){
@@ -28,13 +59,11 @@ selectDois.addEventListener('change', ()=>{
             cotacao = 0.26;
             break;
         default:
-            console.log('ERRO expressão invalida.')
+            alert("Por favor, escolha para qual lugar você deseja converter.")
 
     }
+    interacao()
+    calcularParaPrimeiroCampo(campoUm, campoDois)
 })
-const calcularResultado = () => {
 
-    resultadoFinal = valor.value * cotacao
-    res.value = resultadoFinal.toFixed(2);
-}
-document.querySelector('#atualizar').addEventListener('click', calcularResultado)
+//document.querySelector('#atualizar').addEventListener('click', calcularResultado)
